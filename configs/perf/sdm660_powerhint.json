@@ -394,6 +394,12 @@
       "Value": "5000"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMinFreq",
+      "Duration": 5000,
+      "Value": "647000000"
+    },
+    {
       "PowerHint": "GAME",
       "Node": "CPULittleClusterDownRateLimitUs",
       "Duration": 0,
