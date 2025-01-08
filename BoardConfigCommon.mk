@@ -129,6 +129,7 @@ TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_RAMDISK_USE_LZ4 := true
+override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
 
 # Enable stats logging in LMKD
 TARGET_LMKD_STATS_LOG := false
