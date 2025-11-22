@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     gralloc.sdm660 \
-    hwcomposer.sdm660 \
+    hwcomposer.qcom \
     libdisplayconfig \
     libdrmutils \
     libgralloc.qti \
@@ -387,7 +387,6 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libc2dcolorconvert \
-    libhypv_intercept \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
