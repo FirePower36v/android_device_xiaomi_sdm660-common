@@ -697,6 +697,12 @@
       "Value": "1401600"
     },
     {
+      "PowerHint": "GAME_LOADING",
+      "Node": "UclampTAMin",
+      "Duration": 10000,
+      "Value": "100"
+    },
+    {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
       "Node": "DoubleTapToWake",
       "Duration": 0,
