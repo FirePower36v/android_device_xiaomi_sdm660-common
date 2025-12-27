@@ -12,6 +12,6 @@ limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="maintainer_name">Viviano</string>
+    <string name="derpfest_maintainer">Viviano</string>
 
 </resources>
