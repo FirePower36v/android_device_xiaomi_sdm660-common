@@ -74,6 +74,8 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
 # Display
 TARGET_NEEDS_RAW10_BUFFER_FIX := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
+SOONG_CONFIG_qtidisplay_target_needs_raw10_buffer_fix := true
+SOONG_CONFIG_qtidisplay_gralloc4 := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
