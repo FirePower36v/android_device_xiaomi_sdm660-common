@@ -6,6 +6,7 @@
 #include "CameraProviderExtension.h"
 
 #include <fstream>
+#include <cmath>
 
 #define TORCH_BRIGHTNESS "/sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/brightness"
 #define TORCH_MAX_BRIGHTNESS "/sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness"
@@ -45,7 +46,8 @@ int32_t getTorchDefaultStrengthLevelExt() {
 }
 
 int32_t getTorchMaxStrengthLevelExt() {
-    return get(TORCH_MAX_BRIGHTNESS, 0);
+    static int32_t maxBrightness = get(TORCH_MAX_BRIGHTNESS, 0);
+    return maxBrightness;
 }
 
 int32_t getTorchStrengthLevelExt() {
@@ -53,8 +55,17 @@ int32_t getTorchStrengthLevelExt() {
 }
 
 void setTorchStrengthLevelExt(int32_t torchStrength, bool enabled) {
+    int32_t max = getTorchMaxStrengthLevelExt();
+    int32_t value = torchStrength;
+
+    if (max > 0) {
+        value = static_cast<int32_t>(std::round(max * std::pow(double(torchStrength) / max, 3)));
+        if (torchStrength > 0 && value < 1)
+            value = 1;
+    }
+
     set(TOGGLE_SWITCH, 0);
-    set(TORCH_BRIGHTNESS, torchStrength);
+    set(TORCH_BRIGHTNESS, value);
     if (enabled)
         set(TOGGLE_SWITCH, 255);
 }
