@@ -116,7 +116,6 @@ BOARD_RAMDISK_USE_LZ4 := true
 
 # Kernel
 TARGET_KERNEL_CONFIG := vendor/xiaomi/sdm660_defconfig
-TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_CLANG_VERSION := r596125
 
 # Enable stats logging in LMKD
