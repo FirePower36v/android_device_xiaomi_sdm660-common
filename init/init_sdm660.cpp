@@ -154,7 +154,7 @@ void vendor_load_persist_properties() {
         } else {
             property_override("persist.sys.fp.vendor", "none");
             property_override("ro.board.variant", "d9");
-            property_override("vendor.display.lcd_density", "280");
+            property_override("vendor.display.lcd_density", "322");
             property_override_triple("ro.product.model", "ro.product.system.model",
                                      "ro.product.vendor.model", "MI PAD 4");
 
